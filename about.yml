@@ -1,0 +1,4 @@
+author: semantosoph
+summary: This plugin provides a liquid filter for the mephisto blog engine for automated inclusion of gravatars into posts and comments
+license: MIT
+version: 0.0.1

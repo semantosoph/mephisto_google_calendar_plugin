@@ -1,0 +1,3 @@
+* Write a rake task to prefetch all gravatars of the blogs' users
+* Include a possibility to cache the once fetched gravatars
+

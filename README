@@ -1,0 +1,23 @@
+h2. mephisto_gravatar_plugin
+
+h3. Installation
+
+Installation is real simple. Just download it and put it into your vendor/plugins folder. After that, restart your server.
+
+h3. Options
+
+You may configure the following options in lib/mephisto_gravatar_plugin.rb:
+
+* @default = 'identicon' # gravatar.com offers three default avatars: identicon, monsterid and wavatar@
+* @rating = 'pg' # gravatar.com accepts the following values as rating: g (nicest), pg, r, x (baddest)@
+
+h3. Usage
+
+You can stuff any email into the filter, in order to get its gravatar. Sample usages:
+* @{{ article.author.email | get_gravatar, 30 }}@
+* @{{ comment.author_email | get_gravatar, 30 }}@
+
+Note the object independence. An email address is all you need. You may deliver the desired size as an option to the filter. Leaving that out brings up the standard size of 80x80px.
+
+_Copyright (c) 2009 Semantosoph, released under the MIT license_
+

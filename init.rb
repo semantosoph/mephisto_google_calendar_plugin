@@ -1,0 +1,2 @@
+require 'mephisto_gravatar_plugin'
+Liquid::Template.register_filter MephistoGravatarPlugin
