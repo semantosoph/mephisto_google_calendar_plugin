@@ -1,4 +1,4 @@
 author: semantosoph
-summary: This plugin provides a liquid filter for the mephisto blog engine for automated inclusion of gravatars into posts and comments
+summary: This plugin provides a liquid filter for the mephisto blog engine for inclusion of calendars hosted by Google
 license: MIT
-version: 0.0.1
+version: 0.3.0

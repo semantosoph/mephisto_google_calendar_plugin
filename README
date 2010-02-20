@@ -1,23 +1,23 @@
-h2. mephisto_gravatar_plugin
+Mephisto Google Calendar Plugin
+by: Semantosoph (sven@semantosoph.net)
+=========================================
 
-h3. Installation
+This plugin provides a liquid filter for the mephisto blog engine for inclusion of calendars hosted by Google.
 
-Installation is real simple. Just download it and put it into your vendor/plugins folder. After that, restart your server.
+* Installation
 
-h3. Options
+Installation takes three simple steps.
 
-You may configure the following options in lib/mephisto_gravatar_plugin.rb:
+1. Run 'gem install runt'
+2. Download the Plugin from Github and put it into your vendor/plugins folder.
+3. Restart your server.
 
-* @default = 'identicon' # gravatar.com offers three default avatars: identicon, monsterid and wavatar@
-* @rating = 'pg' # gravatar.com accepts the following values as rating: g (nicest), pg, r, x (baddest)@
+* Usage
 
-h3. Usage
+This plugin offers you a liquid filter. You may call this filter from every liquid template. Provide the liquid filter call with the private url of your calendars ical file.
+The number at the end specifies the number of items you may get. Example:
 
-You can stuff any email into the filter, in order to get its gravatar. Sample usages:
-* @{{ article.author.email | get_gravatar, 30 }}@
-* @{{ comment.author_email | get_gravatar, 30 }}@
+{{ 'https://www.google.com/calendar/ical/your.user.name/private-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/basic.ics' | gcal_shortlist, 7 }}
 
-Note the object independence. An email address is all you need. You may deliver the desired size as an option to the filter. Leaving that out brings up the standard size of 80x80px.
-
-_Copyright (c) 2009 Semantosoph, released under the MIT license_
+Copyright (c) 2010 Semantosoph, released under the MIT license
 

@@ -1,2 +1,4 @@
-require 'mephisto_gravatar_plugin'
-Liquid::Template.register_filter MephistoGravatarPlugin
+require 'googlecalendar/googlecalendar'
+require 'mephisto_google_calendar_plugin'
+Liquid::Template.register_filter MephistoGoogleCalendarPlugin
+
