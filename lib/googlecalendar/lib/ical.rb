@@ -23,7 +23,7 @@ module Googlecalendar
     def handle_element(line)
       pair = line.split(':', 2) # avoid problems when summary contains ':'
       name = pair[0]
-      value = pair[1]
+      value = pair[1].gsub('\\', '')
       handler_method = @method_prefix + name.split(';')[0].tr('-', '_').downcase
       if self.respond_to? handler_method
         self.send(handler_method, value.chomp)
