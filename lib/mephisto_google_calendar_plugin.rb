@@ -34,7 +34,7 @@ module MephistoGoogleCalendarPlugin
             # UNTIL has no value
             expr = rrule_to_runt(revent)
             
-            next_dates = calc_next_date(expr, Date.today, revent.end_date)
+            next_dates = calc_next_date(expr, Date.today)
   
             unless next_dates.blank?
               diff = revent.start_date - revent.end_date
