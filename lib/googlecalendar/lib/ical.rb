@@ -69,10 +69,22 @@ module Googlecalendar
       reset_prefix
     end
     
+    def handle_vevent_valarm_begin(value)
+      @method_prefix = "handle_vevent_valarm_"
+    end
+    
+    def handle_vevent_valarm_end(value)
+      @method_prefix = "handle_vevent_"
+    end
+
     def handle_vevent_begin(value)
+      if value == "VALARM"
+        handle_vevent_valarm_begin(value)
+      elsif
         event = Event.new
         @calendar.add event
         @method_prefix = @method_prefix + value.downcase + "_"
+      end
     end
     
     def handle_vevent_end(value)
