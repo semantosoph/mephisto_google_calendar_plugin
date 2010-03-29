@@ -32,14 +32,19 @@ module MephistoGoogleCalendarPlugin
         revents.each do |revent|
           if revent.rrule_as_hash['UNTIL'].blank?
             # UNTIL has no value
-            expr = rrule_to_runt(revent)
-            next_dates = calc_next_date(expr, Date.today)
-
-            unless next_dates.blank?
-              diff = revent.start_date - revent.end_date
-              revent.start_date = next_dates.first.to_date
-              revent.end_date = next_dates.first.to_date + diff
+            if revent.start_date > Date.today
+              # if start_date lies in the future, the next date is start_date itself, we can leave revent untouched
               nevents << revent
+            else
+              expr = rrule_to_runt(revent)
+              next_dates = calc_next_date(expr, Date.today)
+
+              unless next_dates.blank?
+                diff = revent.start_date - revent.end_date
+                revent.start_date = next_dates.first.to_date
+                revent.end_date = next_dates.first.to_date + diff
+                nevents << revent
+              end
             end
           end
         end
